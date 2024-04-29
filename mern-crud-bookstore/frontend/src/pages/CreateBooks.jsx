@@ -29,8 +29,8 @@ const CreateBooks = () => {
       })
       .catch((error) => {
         setLoading(false);
-        alert("An error happened. Please check console");
-        enqueueSnackbar("Error", { variant: "error" });
+        // alert("An error happened. Please check console");
+        enqueueSnackbar("Error, complete all the data", { variant: "error" });
         console.log(error);
       });
   };

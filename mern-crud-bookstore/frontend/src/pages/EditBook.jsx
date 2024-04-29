@@ -11,7 +11,7 @@ const EditBook = () => {
   const [publishYear, setPublishYear] = useState("");
   const [loading, setLoading] = useState("");
   const navigate = useNavigate();
-  const { enqueuSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   const { id } = useParams();
 
@@ -43,12 +43,12 @@ const EditBook = () => {
       .put(`http://localhost:7777/books/${id}`, data)
       .then(() => {
         setLoading(false);
-        enqueuSnackbar("Book edited succesfully", { variant: "success" });
+        enqueueSnackbar("Book edited succesfully", { variant: "success" });
         navigate("/");
       })
       .catch((error) => {
         setLoading(false);
-        enqueuSnackbar("Error", { variant: "error" });
+        enqueueSnackbar("Error", { variant: "error" });
         console.log(error);
       });
   };

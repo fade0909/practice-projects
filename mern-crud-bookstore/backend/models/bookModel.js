@@ -13,6 +13,7 @@ const bookSchema = mongoose.Schema(
         publishYear: {
             type: Number,
             required: true,
+            max: [9999, 'Publish year must be a four-digit number']
 
         },
     },
